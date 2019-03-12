@@ -1,21 +1,27 @@
-<!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/BlogPosting" {% if page.main-class %}class="post-{{ page.main-class }}"{% endif %}>
-    {% include head.html %}
-    <body>
-        {% include svg-icons.html %}
-        {% include header-post.html %}
-        <section class="post">
+---
+layout: default
+---
+<div class="post">
+    <header class="post-header">
+    <h1>{{ page.title }}</h1>
+    <p class="post-meta">Posted on {{ page.date | date: "%B %-d, %Y" }} {% if page.author %}by {{ page.author }}{{% else %}}{% if site.author.name %}by {{ site.author.name }}{% endif %}{% endif %}{% if page.location %} ({{ page.location }}{% endif %})</p>
 
-            <article role="article" id="post" class="post-content" itemprop="articleBody">
-                {{ content }}
-            </article>
+    {% if page.description %}
+    <p class="post-meta">Description: {{ page.description }}</p>
+    {% endif %}
 
-            {% include share.html %}
-            {% include author.html %}
-            {% if page.comments != false %} 
-                {% include comments.html %}
-            {% endif %}
-            {% include footer.html %}
-        </section>
-    </body>
-</html>
+    {% if page.categories %}
+    <p class="post-meta">Categories:
+    {% for cat in page.categories %}
+    <!-- <a href="{{/categories/#{{ cat }} | prepend: site.baseurl}}" title="{{ cat }}">{{ cat }}</a>&nbsp; -->
+    {{ cat }}&nbsp;
+    {% endfor %}
+
+    </p>
+    {% endif %}
+    </header>
+
+    {{ content }}
+
+    {% include comments.html %}
+</div>
