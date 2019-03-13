@@ -4,12 +4,12 @@ url: "http://LK521.github.io"    # the protocol and hostname of your site, eg. `
 baseurl: "" # the prefix of your site uri, eg. `"/jekyll-theme-EasyBook"` or empty string `""`
 #timezone: Asia/Chongqing
 description: >
-  One or more sentences introducing this blog.
+  Life is a lonely journey.
 
 # Your information
 email: liukunno17@outlook.com
 author: Liu Kun
-avatar: "//www.gravatar.com/avatar/liukunno17@outlook.com?d=mm&s=135"
+avatar: "/_includes/avatar.jpg"
 profile: One sentence introducing yourself.
 #twitter_username: twitter_username
 #github_username:  github_username
